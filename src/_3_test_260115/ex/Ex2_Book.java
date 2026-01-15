@@ -11,7 +11,41 @@ public class Ex2_Book {
     String name;
     String price;
     String writer;
-    public Ex2_Book(){} // 기본 생성자
+
+    // 오버로딩을 이용해서, 개선하기. 기본 값을 , null , 0으로 하는게 아니라.
+    // 보기 좋게, 작자 미상, 가격 미정, 제목 미정.
+
+    public Ex2_Book(){
+        // 방법1
+        // 반복적인 코드 사용
+//        this.name = "제목 미정";
+//        this.price = "가격 미정";
+//        this.writer = "작자 미상";
+
+        // 방법2
+        // this를 이용한 메서드 체이닝.
+        // this -> Ex2_Book , 자기 자신을 가리킴.
+        this("제목 미정","가격 미정","작자 미상");
+
+    } // 기본 생성자
+
+    // 책 제목만 정해진 경우
+
+    public Ex2_Book(String name) {
+//        this.name = name;
+        this(name,"가격 미정","작자 미상");
+    }
+
+
+    // 책 제목과, 가격까지만 정해진 경우
+
+
+    public Ex2_Book(String name, String price) {
+//        this.name = name;
+//        this.price = price;
+        this(name,price,"작자 미상");
+    }
+
     // 개선하기.
     // 매개변수가 3개인 생성자를 이용해서, 데이터를 처음부터 담아서, 생성하기.
     // 우클릭 -> 생성 -> 생성자 선택 -> 멤버를 다 선택. ctrl 누른 상태 선택, 클릭 하기. 생성.

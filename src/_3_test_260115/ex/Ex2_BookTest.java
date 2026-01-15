@@ -49,5 +49,18 @@ public class Ex2_BookTest {
 
         // 책 소개하는 기능 사용하기. 함수 사용.
         book3.introduceBook();
+
+        // 오버로딩을 이용한 샘플 책 3권 추가.
+        //  모두 미정, 미상.
+        Ex2_Book book4 = new Ex2_Book();
+        book4.introduceBook();
+
+        // 책제목만 있고, 나머지 미정,
+        Ex2_Book book5 = new Ex2_Book("샘플 제목1");
+        book5.introduceBook();
+
+        // 책 제목 , 가격 있고, 저자 미상
+        Ex2_Book book6 = new Ex2_Book("샘플 제목1","10000원");
+        book6.introduceBook();
     }
 }
