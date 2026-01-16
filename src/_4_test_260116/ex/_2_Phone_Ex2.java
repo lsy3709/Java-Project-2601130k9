@@ -5,7 +5,7 @@ package _4_test_260116.ex;
 //모든 인스턴스가 공유해야 할 정보 : 예시)애플, 삼성,
 //
 
-public class _2_Phone_Ex1 {
+public class _2_Phone_Ex2 {
     //Phone` 클래스에서 **static 공유 멤버**를 활용한 설계 구조
 //제조사 이름(manufacturer)
     public static String manufacturer = "삼성";
@@ -17,14 +17,14 @@ public class _2_Phone_Ex1 {
     private String phoneNumber;
 //3) 생성자는 , 매개변수가 2개인 생성자
 
-    public _2_Phone_Ex1(String model, String phoneNumber) {
+    public _2_Phone_Ex2(String model, String phoneNumber) {
         this.model = model;
         this.phoneNumber = phoneNumber;
     }
 
 //4) 인스턴스 정보를 출력 메서드 하나 필요함 : printInfo()
     public void printInfo() {
-        System.out.println("제조사 : " + _2_Phone_Ex1.manufacturer );
+        System.out.println("제조사 : " + _2_Phone_Ex2.manufacturer );
         System.out.println("모델명 : " + model); // 외부에서는 접근 x , 여기는 내부입니다. 접근 O
         System.out.println("전화번호 : " + phoneNumber);
         System.out.println("=====================================");
