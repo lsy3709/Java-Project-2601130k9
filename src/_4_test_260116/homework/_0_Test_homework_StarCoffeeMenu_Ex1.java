@@ -1,4 +1,4 @@
-package _4_test_260116;
+package _4_test_260116.homework;
 
 public class _0_Test_homework_StarCoffeeMenu_Ex1 {
 //    실습3
