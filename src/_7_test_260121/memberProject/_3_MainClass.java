@@ -181,6 +181,7 @@ public class _3_MainClass {
                             break;
                         case "4":
                             System.out.println("수정 취소");
+                            break;
                         default:
                             System.out.println("잘못된 입력입니다.");
                     }
