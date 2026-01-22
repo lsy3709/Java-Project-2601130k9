@@ -1,4 +1,4 @@
-package _7_test_260121.memberProject;
+package _8_test_260122.memberProject;
 
 import java.io.*;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ public class _3_MainClass {
 
     public static void main(String[] args) {
 
-        Map<String,_3_MemberBase> members = new HashMap<>();
+        Map<String, _3_MemberBase> members = new HashMap<>();
         loadMembers(members);
 
         _3_MemberBase loggedInMember = null;
@@ -255,7 +255,7 @@ public class _3_MainClass {
             } //switch 닫기
         }//while 닫기
     } // main 닫기
-    public static void saveMembers(Map<String,_3_MemberBase> members){
+    public static void saveMembers(Map<String, _3_MemberBase> members){
         BufferedWriter bw = null;
         try {
             bw = new BufferedWriter(new FileWriter(FILE_NAME));

@@ -1,3 +1,4 @@
+홍길동, hong@naver.com,1234,500
 이상용2,lsy2@naver.com,1234,21
 이상용3,lsy3@naver.com,1234,22
 수정 이상용,lsy@naver.com,123456,40
