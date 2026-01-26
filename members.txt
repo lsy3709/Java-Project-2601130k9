@@ -1,5 +1,6 @@
 이상용4,lsy4@naver.com,1234,20
 홍길동, hong@naver.com,1234,500
 이상용2,lsy2@naver.com,1234,21
+이상용6,lsy6@naver.com,1234,20
 이상용3,lsy3@naver.com,1234,22
 이상용,lsy@naver.com,1234,41
