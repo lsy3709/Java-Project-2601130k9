@@ -53,12 +53,6 @@ public class _3_MainClass extends JFrame {
         // 아직 미생성.
         initUI();
 
-        // 260123_화면_스윙_변경__순서4-4
-        setSize(600, 500);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        // 화면 중앙 배치
-        setLocationRelativeTo(null);
     } // _3_MainClass()생성자 닫기.
 
 
@@ -67,92 +61,7 @@ public class _3_MainClass extends JFrame {
     // 여기가 메인, 나머지 기능 구현은 기존 꺼 재사용함.
     // 화면작업 메인.
     private void initUI() {
-        // 260123_화면_스윙_변경__순서5-2
-        setLayout(new BorderLayout()); // 동,서,남,북, 중앙 배치 관리자.
 
-        // 상단
-        // 260123_화면_스윙_변경__순서5-3
-        // 1. 상단 상태 표시줄
-        statusLabel = new JLabel("로그인 상태 : 로그아웃 됨", SwingConstants.CENTER);
-        // 글꼴 옵션,
-        statusLabel.setFont(new Font("맑은 고딕", Font.BOLD, 14));
-        // 경계 옵션,
-        statusLabel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 0));
-        // 필수,
-        add(statusLabel, BorderLayout.NORTH);
-
-
-        // 가운데
-        // 260123_화면_스윙_변경__순서5-4
-        // 2. 중앙 텍스트 영역(콘솔 출력 대체)
-        displyArea = new JTextArea();
-        displyArea.setEditable(false);// 수정 못하게 방지
-        // 글꼴 옵션
-        displyArea.setFont(new Font("Monospaced", Font.PLAIN, 14));
-        // JTextArea 내부에 공간이 다차면, 스크롤 기능이 생기게 설정.
-        add(new JScrollPane(displyArea), BorderLayout.CENTER);
-
-
-        //하단,
-        // 260123_화면_스윙_변경__순서5-5
-        // 3. 하단 버튼 패널
-        buttonPanel = new JPanel();
-        buttonPanel.setLayout(new GridLayout(2, 3, 5, 5));
-
-        // 버튼 생성, 초기화, (전역에서 선언 후, 이 메서드 안에서 초기화해서 사용함.)
-        btnJoin = new JButton("1 회원가입");
-        btnList = new JButton("2 목록조회");
-        btnLoginLogout = new JButton("3 로그인"); //초깃값, 로그인을 하면, 로그 아웃으로 보일 예정.
-        btnEdit = new JButton("4 회원수정");
-        btnSearch = new JButton("5 회원검색");
-        // 260126_화면버전_기능추가_회원삭제_순서2
-        btnDelelte = new JButton("6 회원탈퇴");
-        btnExit = new JButton("7 종료");
-        // 삭제 기능은 완성 후, 실습으로 제시.
-//            btnJoin = new JButton("1 회원가입");
-
-        // 260123_화면_스윙_변경__순서5-6, 잠시대기
-        // 버튼 이벤트 핸들러(리스너 등록)
-        // 내부에 리스너를 처리하는 클래스를 만들어서 재사용을 하기.
-        btnList.addActionListener(new ActionHandler());
-        // 회원가입 , 이벤트 처리 리스너 추가하기.
-        // 260123_화면_스윙_변경__순서9-3
-        btnJoin.addActionListener(new ActionHandler());
-
-        // 260126_화면버전_기능추가_로그인_로그아웃_순서9
-        btnLoginLogout.addActionListener(new ActionHandler());
-
-        // 260126_화면버전_기능추가_회원수정_순서1
-        btnEdit.addActionListener(new ActionHandler());
-
-        // 260126_화면버전_기능추가_회원검색_순서1
-        btnSearch.addActionListener(new ActionHandler());
-
-        // 260126_화면버전_기능추가_회원삭제_순서3
-        btnDelelte.addActionListener(new ActionHandler());
-
-        // 260126_화면버전_기능추가_종료_순서1
-        btnExit.addActionListener(new ActionHandler());
-
-        // 260123_화면_스윙_변경__순서5-7
-        // 버튼을 패널에 붙이기 작업.
-        buttonPanel.add(btnJoin);
-        buttonPanel.add(btnList);
-        buttonPanel.add(btnLoginLogout);
-        buttonPanel.add(btnEdit);
-        buttonPanel.add(btnSearch);
-        // 260126_화면버전_기능추가_회원삭제_순서3-2
-        buttonPanel.add(btnDelelte);
-        buttonPanel.add(btnExit);
-
-
-        // 260123_화면_스윙_변경__순서5-8
-        // 버튼 패널, 프레임 하단에 배치
-        add(buttonPanel, BorderLayout.SOUTH);
-
-        // 260123_화면_스윙_변경__순서5-9
-        // 버튼들의 초기 상태 결정. 임시 메서드 설정,
-        updateButtonState();
     }
 
     // 260123_화면_스윙_변경__순서6
