@@ -33,6 +33,10 @@ public class _3_MemberUI extends JFrame {
         // 260127_리팩토링_코드정리_순서23
         initUI();
 
+        // 260127_리팩토링_코드정리_순서24
+        // 로그인 유무에 따라, 각 버튼의 활성화 여부를 체크.
+        updateButtonState();
+
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
