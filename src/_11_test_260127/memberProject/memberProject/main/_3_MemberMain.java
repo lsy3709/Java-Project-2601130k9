@@ -1,4 +1,7 @@
-package _11_test_260127.main;
+package _11_test_260127.memberProject.memberProject.main;
+
+import _11_test_260127.memberProject.memberProject.service._3_MemberService;
+import _11_test_260127.memberProject.memberProject.ui._3_MemberUI;
 
 import javax.swing.*;
 
@@ -11,11 +14,13 @@ public class _3_MemberMain {
         SwingUtilities.invokeLater(() -> {
             // 1. 기능 구현 클래스 (서비스) 객체생성
             //_3_MemberService, 미구현
-//            new _3_MemberService();
+            // 260127_리팩토링_코드정리_순서21
+           _3_MemberService service = new _3_MemberService();
 
             //2. 화면 클래스(UI) 객체생성 및 서비스 주입.
            // _3_MemberUI, 미구현
-//            new _3_MemberUI(service);
+            // 260127_리팩토링_코드정리_순서22
+            new _3_MemberUI(service);
         });
     }
 }

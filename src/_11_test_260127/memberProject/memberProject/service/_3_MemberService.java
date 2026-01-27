@@ -1,7 +1,7 @@
-package _11_test_260127.service;
+package _11_test_260127.memberProject.memberProject.service;
 
-import _11_test_260127.model._3_MemberBase;
-import _11_test_260127.model._3_NormalMember;
+import _11_test_260127.memberProject.memberProject.model._3_MemberBase;
+import _11_test_260127.memberProject.memberProject.model._3_NormalMember;
 
 import java.io.*;
 import java.util.HashMap;
@@ -97,7 +97,7 @@ public class _3_MemberService {
             return "존재하지 않는 이메일입니다.";
         }
         // 이메일 존재한다면,
-        _11_test_260127.model._3_MemberBase member = members.get(email);
+        _3_MemberBase member = members.get(email);
         if(!member.getPassword().equals(password)) {
             return "패스워드가 틀렸습니다.";
         }
@@ -153,8 +153,5 @@ public class _3_MemberService {
         } // finally 닫기
     }
 
-    // 회원수정
-    // 회원검색
-    // 회원탈퇴
-    // 종료
+
 }
