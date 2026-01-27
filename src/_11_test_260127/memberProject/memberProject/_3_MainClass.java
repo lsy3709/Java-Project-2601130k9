@@ -1,4 +1,4 @@
-package _10_test_260126.memberProject;
+package _11_test_260127.memberProject.memberProject;
 
 import javax.swing.*;
 import java.awt.*;
@@ -331,7 +331,7 @@ public class _3_MainClass extends JFrame {
                 if (members.containsKey(inputEmail)) {
                     // 맵안에 있는 회원들중, 로그인하려는 멤버의 객체를 , 이메일로 가져오기
                     // 키 : 이메일, 값: 회원정보가 들어있는 객체,
-                    _10_test_260126.memberProject._3_MemberBase member = members.get(inputEmail);
+                    _3_MemberBase member = members.get(inputEmail);
                     if (member.getPassword().equals(inputPassword)) {
                         // 해당 이메일에, 패스워드도 일치하면, 로그인 성공,
                         // 로그인한 유저 정보의 객체를, loggedInMember에 할당하기.
@@ -486,7 +486,7 @@ public class _3_MainClass extends JFrame {
         if (choice == 0) { // 이메일 검색
             // 검색어를 받아서, 이메일로, members , Map의 내용을 검색.
             if (members.containsKey(keyword)) {
-                _10_test_260126.memberProject._3_MemberBase member = members.get(keyword);
+                _3_MemberBase member = members.get(keyword);
                 printLog("검색결과 : " + member.getName() + ", 이메일 : " + member.getEmail());
                 isFound = true;
             }

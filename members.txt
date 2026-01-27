@@ -3,4 +3,4 @@
 이상용2,lsy2@naver.com,1234,21
 이상용6,lsy6@naver.com,1234,20
 이상용3,lsy3@naver.com,1234,22
-이상용22,lsy@naver.com,123456,300
+이상용수정1,lsy@naver.com,123456,300
