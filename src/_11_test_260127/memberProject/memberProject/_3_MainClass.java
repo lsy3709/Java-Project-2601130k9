@@ -580,40 +580,7 @@ public class _3_MainClass extends JFrame {
     // 260123_화면_스윙_변경__순서11
     // static -> 인스턴스 메서드로 변경 합니다. :  static 제거.
     public int loadMembers(Map<String, _3_MemberBase> members) {
-        File file = new File(FILE_NAME);
-        if (!file.exists()) { // 해당 파일이 존재 안하니? true(파일없다)
-            return 0;
-        }
-        int loadCount = 0;
-        BufferedReader br = null;
-        try {
-            br = new BufferedReader(new FileReader(file));
-            String line;
-            //이상용4,lsy4@naver.com,1234,20
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data.length == 4) {
-                    String name = data[0];
-                    String email = data[1];
-                    String password = data[2];
-                    int age = Integer.parseInt(data[3]);
-                    members.put(email, new _3_NormalMember(name, email, password, age));
-                    loadCount++;
 
-                }
-            }
-            System.out.println("파일 불러오기 완료 :" + loadCount + "명의 회원 정보를 불러옴.");
-        } catch (IOException e) {
-            System.out.println("파일 불러오기 실패 원인 : " + e.getMessage());
-        } finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (IOException e) {
-                    System.out.println("파일 닫기 실패");
-                }
-            }
-        } // finally 닫기
         return loadCount;
     }
 

@@ -3,9 +3,7 @@ package _11_test_260127.service;
 import _11_test_260127.model._3_MemberBase;
 import _11_test_260127.model._3_NormalMember;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +18,8 @@ public class _3_MemberService {
     public _3_MemberService() {
         //생성시, 파일 로드, members.txt
 //        미구현
-//        loadMembers();
+        // 260127_리팩토링_코드정리_순서9
+        loadMembers();
     }
 
     // 260127_리팩토링_코드정리_순서3
@@ -46,8 +45,8 @@ public class _3_MemberService {
     // 260127_리팩토링_코드정리_순서4
     // 기존 기능들을 가져오기.
     // 회원가입
-    public String join(String name, String email, String password, int age){
-        if(members.containsKey(email)) {
+    public String join(String name, String email, String password, int age) {
+        if (members.containsKey(email)) {
             return "이미 가입된 이메일입니다.";
         }
         _3_NormalMember newMember = new _3_NormalMember(name, email, password, age);
@@ -90,8 +89,70 @@ public class _3_MemberService {
         }
     }
 
-    // 목록조회
+    // 260127_리팩토링_코드정리_순서6
+    // 로그인
+    public String login(String email, String password){
+        // 로그인시, 입력한 이메일의 회원이 있는지 확인.
+        if(!members.containsKey(email)) {
+            return "존재하지 않는 이메일입니다.";
+        }
+        // 이메일 존재한다면,
+        _11_test_260127.model._3_MemberBase member = members.get(email);
+        if(!member.getPassword().equals(password)) {
+            return "패스워드가 틀렸습니다.";
+        }
+        // 패스워드도 일치한다면
+        this.loggedInMember = member; // 로그인 상태로 변경.
+        return  "success";
+    }
+    // 260127_리팩토링_코드정리_순서6
     // 로그아웃
+    public void logout() {
+        this.loggedInMember = null;
+    }
+
+    // 260127_리팩토링_코드정리_순서7
+    // 정보 수정 후 저장
+    public void updateMember() {
+        saveMembers();
+    }
+
+    // 260127_리팩토링_코드정리_순서8
+    // 목록조회
+    public void loadMembers() {
+        File file = new File(FILE_NAME);
+        if (!file.exists()) { // 해당 파일이 존재 안하니? true(파일없다)
+            return ;
+        }
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(file));
+            String line;
+            //이상용4,lsy4@naver.com,1234,20
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length == 4) {
+                    String name = data[0];
+                    String email = data[1];
+                    String password = data[2];
+                    int age = Integer.parseInt(data[3]);
+                    members.put(email, new _3_NormalMember(name, email, password, age));
+
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("파일 불러오기 실패 원인 : " + e.getMessage());
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    System.out.println("파일 닫기 실패");
+                }
+            }
+        } // finally 닫기
+    }
+
     // 회원수정
     // 회원검색
     // 회원탈퇴
